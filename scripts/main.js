@@ -276,6 +276,8 @@ var newModel = {
 }
 if ( window.location.pathname.includes('/new.html') ) {
   var app = {
+    snippetCounter: 0,
+    codeMirrors: {},
     addEmptySnippet() {
       var snippetTemplate = `
         <div class="switch-wrap">
@@ -290,11 +292,11 @@ if ( window.location.pathname.includes('/new.html') ) {
         </div><!-- end .switch-wrap -->
 
         <div class="snippet snippet1">
-          <div class="annotation">
-            <textarea class="html-annotation"></textarea>
+          <div class="description">
+            <textarea></textarea>
           </div>
           <div class="code">
-            <textarea class="html"></textarea>
+            <textarea></textarea>
           </div>
         </div><!-- end .snippet -->
 
@@ -304,8 +306,18 @@ if ( window.location.pathname.includes('/new.html') ) {
         </div><!-- end .button-wrap -->`
         
       var snippetWrap = document.createElement('div');
+      var descriptionTextarea, codeTextarea;
+
       snippetWrap.className = 'snippet-wrap';  
       snippetWrap.innerHTML = snippetTemplate;
+      
+      this.snippetCounter += 1;
+
+      descriptionTextarea = snippetWrap.querySelector('.description textarea');
+      this.codeMirrors[this.snippetCounter + 'd'] = CodeMirror.fromTextArea(descriptionTextarea, {
+        lineNumbers: true
+      });
+      
 
       document.querySelector('.code-holder').appendChild(snippetWrap);
     }
