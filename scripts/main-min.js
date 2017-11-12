@@ -1,7 +1,7 @@
 if ( window.location.pathname.includes('/annotation.html') ) {
-  var textarea1 = document.querySelector('.snippet1 .annotation textarea');
+  var textarea1 = document.querySelector('.snippet1 .code-description textarea');
   var textarea2 = document.querySelector('.snippet1 .code textarea');
-  var textarea3 = document.querySelector('.snippet2 .annotation textarea');
+  var textarea3 = document.querySelector('.snippet2 .code-description textarea');
   var textarea4 = document.querySelector('.snippet2 .code textarea');
   var text1 = `<div class="dog">
     <div class="dog-body">
@@ -292,7 +292,7 @@ if ( window.location.pathname.includes('/new.html') ) {
         </div><!-- end .switch-wrap -->
 
         <div class="snippet snippet1">
-          <div class="description">
+          <div class="code-description">
             <textarea></textarea>
           </div>
           <div class="code">
@@ -313,8 +313,12 @@ if ( window.location.pathname.includes('/new.html') ) {
       
       this.snippetCounter += 1;
 
-      descriptionTextarea = snippetWrap.querySelector('.description textarea');
+      descriptionTextarea = snippetWrap.querySelector('.code-description textarea');
+      codeTextarea = snippetWrap.querySelector('.code textarea');
       this.codeMirrors[this.snippetCounter + 'd'] = CodeMirror.fromTextArea(descriptionTextarea, {
+        lineNumbers: true
+      });
+      this.codeMirrors[this.snippetCounter + 'c'] = CodeMirror.fromTextArea(codeTextarea, {
         lineNumbers: true
       });
       

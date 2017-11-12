@@ -159,7 +159,10 @@ h1 {
 .show-page .snippet {
   margin-bottom: 30px; }
 
-.annotation {
+.show-page .CodeMirror {
+  height: auto; }
+
+.code-description {
   border-right: 1px solid #333;
   width: 50%; }
 
@@ -167,8 +170,7 @@ h1 {
   width: 50%; }
 
 .CodeMirror {
-  font-size: 16px;
-  height: auto; }
+  font-size: 16px; }
 
 .new-page form {
   width: 80%;
