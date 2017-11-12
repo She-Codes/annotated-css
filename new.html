@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>New</title>
+  <link href="https://fonts.googleapis.com/css?family=Mukta|Squada+One|VT323" rel="stylesheet">
+  <link rel="stylesheet" href="lib/codemirror.css">
+  <link rel="stylesheet" href="lib/theme/tomorrow-night-eighties.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://use.fontawesome.com/7d8d014f38.js"></script>
+</head>
+<body class="new-page">
+  <nav>
+    <ul class="grid">
+      <li class="login"><a href="#">Login / Logout</a></li>
+      <li class="new"><a href="#">New</a></li>
+    </ul>
+  </nav>
+  
+  <header>
+    <h1>Annotated CSS</h1>
+    <h2 class="sub-heading">** Explanations of CSS Code **</h2>
+  </header>
+  
+  <form>
+    <div class="pen">
+      <div class="embed">
+        <label for="embed-code">Enter Codepen embed code:</label>
+        <textarea id="embed-code" name="embedCode"></textarea>
+      </div><!-- end .embed -->
+      <div class="description">
+        <label for="description">Enter Annotation description:</label>
+        <textarea id="description" name="description"></textarea>
+      </div><!-- end .description -->
+    </div><!-- end .pen -->
+  
+    <div class="code-holder">
+      <div class="snippet-wrap">
+        <div class="switch-wrap">
+          <div class="switch-outter">
+            HTML
+            <label class="switch">
+              <input type="checkbox" id="switch-toggle" checked>
+              <span class="switch-label"></span>
+            </label>
+            CSS
+          </div><!-- end .switch-outter -->
+        </div><!-- end .switch-wrap -->
+  
+        <div class="snippet snippet1">
+          <div class="annotation">
+            <textarea class="html-annotation"></textarea>
+          </div>
+          <div class="code">
+            <textarea class="html"></textarea>
+          </div>
+        </div><!-- end .snippet -->
+  
+        <div class="button-wrap">
+          <button type="button" class="add">Add New</button>
+          <button type="button" class="delete"><i class="fa fa-trash"></i></button>
+        </div><!-- end .button-wrap -->
+      </div><!-- end .snippet-wrap -->
+    </div><!-- end .code-holder -->
+
+    <div class="test"></div>
+    
+    <button type="submit" class="submit">Save</button>
+  </form>
+  <script src="lib/codemirror.js"></script>
+  <script src="mode/css/css.js"></script>
+  <script src="mode/xml/xml.js"></script>
+  <script src="mode/javascript/javascript.js"></script>
+  <script src="mode/htmlmixed/htmlmixed.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

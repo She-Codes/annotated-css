@@ -1,0 +1,5 @@
+*.sublime-workspace
+.DS_Store
+*.codekit
+*.codekit3
+*.vscode
