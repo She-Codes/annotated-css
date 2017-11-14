@@ -284,7 +284,7 @@ if ( window.location.pathname.includes('/new.html') ) {
           <div class="switch-outter">
             HTML
             <label class="switch">
-              <input type="checkbox" id="switch-toggle" checked>
+              <input type="checkbox" id="switch-toggle">
               <span class="switch-label"></span>
             </label>
             CSS
@@ -316,12 +316,19 @@ if ( window.location.pathname.includes('/new.html') ) {
       descriptionTextarea = snippetWrap.querySelector('.code-description textarea');
       codeTextarea = snippetWrap.querySelector('.code textarea');
       this.codeMirrors[this.snippetCounter + 'd'] = CodeMirror.fromTextArea(descriptionTextarea, {
-        lineNumbers: true
+        theme:  "tomorrow-night-eighties",
+        lineNumbers: true,
+        tabSize: 2
       });
+      // need this otherwise text in editor overlaps line numbers / gutters
+      this.codeMirrors[this.snippetCounter + 'd'].refresh();
       this.codeMirrors[this.snippetCounter + 'c'] = CodeMirror.fromTextArea(codeTextarea, {
-        lineNumbers: true
+        theme:  "tomorrow-night-eighties",
+        lineNumbers: true,
+        tabSize: 2
       });
-      
+      // need this otherwise text in editor overlaps line numbers / gutters
+      this.codeMirrors[this.snippetCounter + 'c'].refresh();
 
       document.querySelector('.code-holder').appendChild(snippetWrap);
     }
